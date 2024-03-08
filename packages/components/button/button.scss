@@ -1,0 +1,36 @@
+@use '../../../styles/_variables.scss' as *;
+// button.scss
+.cu-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    &--primary {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+
+    &--secondary {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    &--small {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    &--medium {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    &--large {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+}
+ 
