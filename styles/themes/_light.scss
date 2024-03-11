@@ -1,4 +1,11 @@
-:root {
-    --primary-color: #ffffff; // 白天模式的主色
-    --secondary-color: #000000; // 白天模式的辅色
-}
+// 明亮主题的样式
+@mixin theme-light {
+    // 定义特定于明亮主题的样式
+    --background-color: #fff; // 白色背景
+    --text-color: #333; // 深色文本
+    --border-color: #ddd; // 浅色边框
+    --link-color: #0066cc; // 链接颜色
+    --hover-background-color: #f8f8f8; // 悬停时的背景色
+    // ... 其他明亮主题特定的样式变量
+  }
+  

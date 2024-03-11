@@ -1,0 +1,34 @@
+// styles/root.scss
+@use "themes/light" as light;
+@use "themes/dark" as dark;
+
+:root {
+    @include light.theme-light;
+}
+
+:root {
+    // 颜色变量
+    --primary-color: map-get($colors, "primary");
+    --secondary-color: map-get($colors, "secondary");
+    --success-color: map-get($colors, "success");
+    --info-color: map-get($colors, "info");
+    --warning-color: map-get($colors, "warning");
+    --danger-color: map-get($colors, "danger");
+    --light-color: map-get($colors, "light");
+    --dark-color: map-get($colors, "dark");
+
+    // 字体变量
+    --font-body: map-get($fonts, "body");
+    --font-heading: map-get($fonts, "heading");
+
+    // 间距变量
+    --spacing-xs: map-get($spacing, "xs");
+    --spacing-sm: map-get($spacing, "sm");
+    --spacing-md: map-get($spacing, "md");
+    --spacing-lg: map-get($spacing, "lg");
+    --spacing-xl: map-get($spacing, "xl");
+}
+
+.theme-dark {
+    @include dark.theme-dark;
+}

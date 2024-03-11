@@ -1,4 +1,11 @@
-[data-theme='dark'] {
-    --primary-color: #000000; // 夜间模式的主色
-    --secondary-color: #ffffff; // 夜间模式的辅色
-}
+// 暗色主题的样式
+@mixin theme-dark {
+    // 定义特定于暗色主题的样式
+    --background-color: #282c34; // 暗色背景
+    --text-color: #c7c7c7; // 浅色文本
+    --border-color: #444; // 深色边框
+    --link-color: #4a9cd6; // 亮蓝链接色
+    --hover-background-color: #383c44; // 悬停时的背景色
+    // ... 其他暗色主题特定的样式变量
+  }
+  

@@ -1,6 +1,5 @@
 // main.scss
-@use 'variables';
+@use 'root';
+@forward 'var';
 @use 'mixins';
 @use 'animation';
-@use 'themes/light';
-@use 'themes/dark';

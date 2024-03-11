@@ -1,0 +1,44 @@
+// styles/_var.scss
+
+@use 'sass:math';
+@use 'sass:map';
+
+// 默认的颜色、字体和间距
+$default-colors: (
+    primary: #007bff,
+    secondary: #6c757d,
+    success: #28a745,
+    info: #17a2b8,
+    warning: #ffc107,
+    danger: #dc3545,
+    light: #f8f9fa,
+    dark: #343a40
+) !default;
+
+// $default-fonts: (
+//     body: "Helvetica Neue",
+//     Arial,
+//     sans-serif,
+//     heading: "Georgia",
+//     "Times New Roman",
+//     serif
+// ) !default;
+
+
+$default-spacing: (
+    xs: 4px,
+    sm: 8px,
+    md: 16px,
+    lg: 24px,
+    xl: 48px
+) !default;
+
+// 用户自定义变量的空 map
+$custom-colors: () !default;
+$custom-fonts: () !default;
+$custom-spacing: () !default;
+
+// 使用 map.merge 或 map.deep-merge 合并默认值和自定义值
+$colors: map.merge($default-colors, $custom-colors);
+// $fonts: map.merge($default-fonts, $custom-fonts);
+$spacing: map.merge($default-spacing, $custom-spacing);

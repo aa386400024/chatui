@@ -25,15 +25,6 @@
           >Welcome, <b>{{ user.name }}</b
           >!</span
         >
-        <my-button size="small" @click="$emit('logout')" label="Log out" v-if="user" />
-        <my-button size="small" @click="$emit('login')" label="Log in" v-if="!user" />
-        <my-button
-          primary
-          size="small"
-          @click="$emit('createAccount')"
-          label="Sign up"
-          v-if="!user"
-        />
       </div>
     </div>
   </header>
@@ -41,7 +32,6 @@
 
 <script lang="ts" setup>
 import './header.css'
-import MyButton from './Button.vue'
 
 defineProps<{ user: { name: string } | null }>()
 
