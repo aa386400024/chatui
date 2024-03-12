@@ -66,3 +66,12 @@ pnpm test:e2e
 ```sh
 pnpm lint
 ```
+
+
+发布到npm
+由于项目使用了pnpm。所以在登陆和发布的时候，需要将注册地址修改下
+
+npm login --registry=https://registry.npmjs.org
+
+在package.json修改版本号后，执行下面的发布命令
+npm publish --registry=https://registry.npmjs.org --access=public

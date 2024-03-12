@@ -1,24 +1,31 @@
 {
   "name": "@springdragon/chat-ui",
-  "version": "0.0.3",
+  "version": "0.0.13",
   "private": false,
   "type": "module",
-  "main": "dist/chatui.umd.js",
-  "module": "dist/chatui.es.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/chatui.umd.js",
+  "module": "lib/chatui.js",
+  "style": "lib/style.css",
+  "types": "lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/chatui.es.js",
-      "require": "./dist/chatui.umd.js"
+      "import": "./lib/chatui.js",
+      "require": "./lib/chatui.umd.js",
+      "types": "./lib/index.d.ts"
     }
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "peerDependencies": {
     "vue": "^3.4.15"
   },
   "description": "VueChatUI - 一个现代的 Vue 3 组件库，专为构建交互式聊天界面设计。结合 Vue 3 的响应式特性和高性能，提供了一套丰富、灵活且易于集成的聊天 UI 组件，适用于构建高度交互和定制化的聊天应用。",
   "files": [
-    "dist",
-    "README.md"
+    "lib",
+    "LICENSE",
+    "README.md",
+    "global.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -48,6 +55,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue": "^3.4.15"
   },
   "devDependencies": {

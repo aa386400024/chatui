@@ -1,0 +1,6 @@
+// styles/_functions.scss
+@use 'sass:map';
+
+@function get-var($map, $key) {
+  @return map.get($map, $key);
+}
