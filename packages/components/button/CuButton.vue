@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import './button.scss'
+import './style.scss'
 import { computed } from 'vue'
 
 const props = withDefaults(
