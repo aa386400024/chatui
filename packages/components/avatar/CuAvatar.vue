@@ -1,5 +1,5 @@
 <template>
-    <div class="avatar" :class="avatarClass" :style="avatarStyle">
+    <div class="cu-avatar" :class="avatarClass" :style="avatarStyle">
         <img v-if="src && !hasLoadError" :src="src" :srcset="srcSet" :alt="alt" :style="fitStyle"
             @error="handleError" />
         <div v-else-if="icon" class="avatar-icon">
@@ -33,26 +33,40 @@ const props = withDefaults(
 
 const hasLoadError = ref(false);
 
-const avatarClass = computed(() => ({
-    'cu-avatar': true,
-    [`cu-avatar--${props.size}`]: typeof props.size === 'string',
-    [`cu-avatar--${props.shape}`]: true,
-    'cu-avatar--icon': !!props.icon,
-}));
+const avatarClass = computed(() => {
+    const classObj = {
+        'cu-avatar': true,
+        [`cu-avatar--${props.size}`]: typeof props.size === 'string',
+        [`cu-avatar--${props.shape}`]: true,
+        'cu-avatar--icon': !!props.icon,
+    };
+    console.log(classObj); // 调试输出
+    return classObj;
+});
+
 
 const avatarStyle = computed(() => {
-    let sizeValue;
-    if (typeof props.size === 'number') {
-        sizeValue = `${props.size}px`;
-    } else {
+    let sizeValue: string;
+
+    // 尝试将size解析为数字
+    const parsedSize = parseInt(props.size as string);
+    if (!isNaN(parsedSize)) {
+        sizeValue = `${parsedSize}px`;
+    } else if (typeof props.size === 'string') {
+        // 如果size是字符串且匹配预定义的值
         sizeValue = getSizeValue(props.size);
+    } else {
+        // 默认值
+        sizeValue = '50px';
     }
+
     return {
         width: sizeValue,
         height: sizeValue,
-        objectFit: props.fit,
+        objectFit: props.fit as string,
     };
 });
+
 
 const getSizeValue = (sizeName: string) => {
     switch (sizeName) {
@@ -75,31 +89,35 @@ const handleError = () => {
 };
 </script>
 
-<style scoped>
-.avatar {
+<style lang="scss" scoped>
+.cu-avatar {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* 确保文本内容垂直和水平居中 */
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
-    /* 当文本太长时显示省略号 */
-}
 
-.avatar--circle {
-    border-radius: 50%;
-}
+    &--circle {
+        border-radius: 50%;
+    }
 
-.avatar--square {
-    border-radius: 0;
-}
+    &--square {
+        border-radius: 0;
+    }
 
-.avatar-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &--small,
+    &--medium,
+    &--large {
+        // 尺寸相关样式
+    }
+
+    &--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 img {
