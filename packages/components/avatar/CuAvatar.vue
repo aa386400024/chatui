@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts" setup>
+import './style.scss'
 import { computed, ref, watch } from 'vue';
 
 const props = withDefaults(
@@ -18,14 +19,14 @@ const props = withDefaults(
         srcSet?: string,
         alt: string,
         icon?: string,
-        size?: number | 'small' | 'medium' | 'large',
+        size?: number | 'small' | 'default' | 'large',
         shape?: 'circle' | 'square',
         fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
     }>(),
     {
         src: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
         alt: '',
-        size: 'medium', // 默认尺寸
+        size: 'default', // 默认尺寸
         shape: 'circle', // 默认形状
         fit: 'cover', // 默认图片填充模式
     }
@@ -71,7 +72,7 @@ const avatarStyle = computed(() => {
 const getSizeValue = (sizeName: string) => {
     switch (sizeName) {
         case 'small': return '30px'; // 示例值，根据需要调整
-        case 'medium': return '50px'; // 示例值，根据需要调整
+        case 'default': return '50px'; // 示例值，根据需要调整
         case 'large': return '70px'; // 示例值，根据需要调整
         default: return '50px';
     }
@@ -88,41 +89,3 @@ const handleError = () => {
     // 触发自定义的错误事件
 };
 </script>
-
-<style lang="scss" scoped>
-.cu-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    &--circle {
-        border-radius: 50%;
-    }
-
-    &--square {
-        border-radius: 0;
-    }
-
-    &--small,
-    &--medium,
-    &--large {
-        // 尺寸相关样式
-    }
-
-    &--icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-}
-</style>

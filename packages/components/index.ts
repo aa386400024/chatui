@@ -3,13 +3,16 @@
  */
 import CuButton from './button';
 import CuAvatar from './avatar';
+import CuMessage from './message';
 
 export default [
     CuButton,
-    CuAvatar
+    CuAvatar,
+    CuMessage
 ];
 
 export { 
     CuButton, 
-    CuAvatar 
+    CuAvatar,
+    CuMessage
 };

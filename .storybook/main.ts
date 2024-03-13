@@ -10,7 +10,7 @@ const config: StorybookConfig = {
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
-        '@storybook/addon-interactions'
+        '@storybook/addon-interactions',
     ],
     framework: {
         name: '@storybook/vue3-vite',
@@ -18,6 +18,6 @@ const config: StorybookConfig = {
     },
     docs: {
         autodocs: 'tag'
-    }
+    },
 }
 export default config

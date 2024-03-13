@@ -8,7 +8,7 @@ const meta: Meta<typeof Avatar> = {
     argTypes: {
         size: {
             control: 'text', // 使用文本框控制
-            description: 'Size of the avatar (can be "small", "medium", "large", or a number)'
+            description: 'Size of the avatar (can be "small", "default", "large", or a number)'
         },
         src: {
             control: 'text',
@@ -34,7 +34,7 @@ const meta: Meta<typeof Avatar> = {
         }
     },
     args: {
-        size: 'medium', // default size
+        size: 'default', // default size
         src: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
         alt: 'Default Avatar',
         shape: 'circle',
@@ -69,7 +69,7 @@ export const LargeSquareAvatar: Story = {
 export const IconAvatar: Story = {
     args: {
         icon: 'user',
-        size: 'medium',
+        size: 'default',
         shape: 'circle'
     }
 }
@@ -78,7 +78,7 @@ export const LoadError: Story = {
     args: {
         src: 'https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png', // Invalid URL to simulate load failure
         alt: 'Load Failed',
-        size: 'medium',
+        size: 'default',
         shape: 'circle'
     }
 }
@@ -87,7 +87,7 @@ export const CustomFit: Story = {
     args: {
         src: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
         alt: 'Custom Fit Avatar',
-        size: 'medium',
+        size: 'default',
         fit: 'scale-down'
     }
 }

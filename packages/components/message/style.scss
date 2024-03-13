@@ -1,0 +1,19 @@
+@use "../../../styles/main.scss" as *;
+.cu-message {
+    display: inline-block;
+    word-wrap: break-word;
+    padding: 10px 20px;
+    color: white;
+    line-height: 2;
+}
+
+.cu-message--sent {
+    background-color: #0b93f6;
+    align-self: flex-end;
+}
+
+.cu-message--received {
+    background-color: #e5e5ea;
+    color: black;
+    align-self: flex-start;
+}
