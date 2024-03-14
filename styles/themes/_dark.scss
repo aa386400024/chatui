@@ -1,9 +1,23 @@
-// styles/themes/_dark.scss
-@use "../_var.scss" as var;
+@use "sass:map";
+@use "../styles/_var.scss" as var;
+
 :root.theme-dark {
-    --cu-background-color: #{var.$color-black}; // 暗色背景
-    --cu-text-color: #c7c7c7; // 浅色文本
-    --cu-border-color: #444; // 深色边框
-    --cu-link-color: #4a9cd6; // 亮蓝链接色
-    --cu-hover-background-color: #383c44; // 悬停时的背景色
+  --cu-background-color: #303030; // 示例暗背景色
+  --cu-text-color: #f0f0f0; // 示例浅色文本
+  --cu-border-color: #444444; // 示例暗边框色
+  --cu-link-color: #{var.$color-primary}; // 使用主题色作为链接颜色
+  --cu-hover-background-color: #383838; // 示例悬停背景色
+  --cu-text-color-regular: #f0f0f0; // 示例暗模式下的文本颜色
+  --cu-input-padding-vertical: #{var.$input-padding-vertical};
+  --cu-input-padding-horizontal: #{var.$input-padding-horizontal};
+  --cu-border-color: #444444; // 示例暗边框色
+  --cu-border-radius-base: #{var.$border-radius-base};
+  --cu-font-size-base: #{map.get(var.$font-sizes, 'base')};
+  --cu-font-size-small: #{map.get(var.$font-sizes, 'small')};
+  --cu-color-primary: #{var.$color-primary};
+  --cu-input-disabled-bg: #404040; // 示例暗模式禁用背景色
+  --cu-input-disabled-border: #555555; // 示例暗模式禁用边框色
+  --cu-input-disabled-color: #666666; // 示例暗模式禁用文本色
+  --cu-input-hover-border-color: #555555; // 示例暗模式悬停边框色
+  --cu-input-placeholder-color: #666666; // 示例暗模式占位符颜色
 }

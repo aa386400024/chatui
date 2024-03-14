@@ -1,9 +1,23 @@
-// styles/themes/_light.scss
-@use "../_var.scss" as var;
+@use "sass:map";
+@use "../styles/_var.scss" as var;
+
 :root.theme-light {
-  --cu-background-color: #{var.$color-white}; // 白色背景
-  --cu-text-color: #333; // 深色文本
-  --cu-border-color: #ddd; // 浅色边框
-  --cu-link-color: #0066cc; // 链接颜色
-  --cu-hover-background-color: #f8f8f8; // 悬停时的背景色
+    --cu-background-color: #{var.$color-white};
+    --cu-text-color: #333;
+    --cu-border-color: #{var.$border-color};
+    --cu-link-color: #{var.$color-primary};
+    --cu-hover-background-color: #f8f8f8;
+    --cu-text-color-regular: #{var.$color-info};
+    --cu-input-padding-vertical: #{var.$input-padding-vertical};
+    --cu-input-padding-horizontal: #{var.$input-padding-horizontal};
+    --cu-border-color: #{var.$border-color};
+    --cu-border-radius-base: #{var.$border-radius-base};
+    --cu-font-size-base: #{map.get(var.$font-sizes, "base")};
+    --cu-font-size-small: #{map.get(var.$font-sizes, "small")};
+    --cu-color-primary: #{var.$color-primary};
+    --cu-input-disabled-bg: #{var.$input-disabled-bg};
+    --cu-input-disabled-border: #{var.$input-disabled-border};
+    --cu-input-disabled-color: #{var.$input-disabled-color};
+    --cu-input-hover-border-color: #{var.$input-hover-border-color};
+    --cu-input-placeholder-color: #{var.$input-placeholder-color};
 }

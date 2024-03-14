@@ -31,6 +31,22 @@ $colors: map.deep-merge(
     $colors
 );
 
+// 添加与 `.cu-textarea` 类相关的变量
+$font-sizes: (
+    "base": 14px,
+    "small": 12px
+) !default;
+
+$border-color: #dcdfe6 !default;
+$border-radius-base: 4px !default;
+$input-padding-vertical: 8px !default;
+$input-padding-horizontal: 12px !default;
+$input-disabled-bg: #f5f5f5 !default;
+$input-disabled-border: #dcdfe6 !default;
+$input-disabled-color: #c0c4cc !default;
+$input-hover-border-color: #c0c4cc !default;
+$input-placeholder-color: #c0c4cc !default;
+
 $color-white: map.get($colors, 'white') !default;
 $color-black: map.get($colors, 'black') !default;
 $color-primary: map.get($colors, 'primary', 'base') !default;
