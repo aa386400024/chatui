@@ -4,16 +4,10 @@
 :root.theme-dark {
   --cu-background-color: #303030; // 示例暗背景色
   --cu-text-color: #f0f0f0; // 示例浅色文本
-  --cu-border-color: #444444; // 示例暗边框色
+  --cu-border-color: #{var.$border-color-dark};
   --cu-link-color: #{var.$color-primary}; // 使用主题色作为链接颜色
   --cu-hover-background-color: #383838; // 示例悬停背景色
   --cu-text-color-regular: #f0f0f0; // 示例暗模式下的文本颜色
-  --cu-input-padding-vertical: #{var.$input-padding-vertical};
-  --cu-input-padding-horizontal: #{var.$input-padding-horizontal};
-  --cu-border-color: #444444; // 示例暗边框色
-  --cu-border-radius-base: #{var.$border-radius-base};
-  --cu-font-size-base: #{map.get(var.$font-sizes, 'base')};
-  --cu-font-size-small: #{map.get(var.$font-sizes, 'small')};
   --cu-color-primary: #{var.$color-primary};
   --cu-input-disabled-bg: #404040; // 示例暗模式禁用背景色
   --cu-input-disabled-border: #555555; // 示例暗模式禁用边框色

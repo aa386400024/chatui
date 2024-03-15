@@ -4,16 +4,10 @@
 :root.theme-light {
     --cu-background-color: #{var.$color-white};
     --cu-text-color: #333;
-    --cu-border-color: #{var.$border-color};
+    --cu-border-color: #{var.$border-color-light};
     --cu-link-color: #{var.$color-primary};
     --cu-hover-background-color: #f8f8f8;
     --cu-text-color-regular: #{var.$color-info};
-    --cu-input-padding-vertical: #{var.$input-padding-vertical};
-    --cu-input-padding-horizontal: #{var.$input-padding-horizontal};
-    --cu-border-color: #{var.$border-color};
-    --cu-border-radius-base: #{var.$border-radius-base};
-    --cu-font-size-base: #{map.get(var.$font-sizes, "base")};
-    --cu-font-size-small: #{map.get(var.$font-sizes, "small")};
     --cu-color-primary: #{var.$color-primary};
     --cu-input-disabled-bg: #{var.$input-disabled-bg};
     --cu-input-disabled-border: #{var.$input-disabled-border};

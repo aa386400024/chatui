@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "../../../styles/main.scss" as *;
+
+.cu-col {
+    box-sizing: border-box;
+}
+
+@for $i from 1 through 24 {
+    .cu-col-#{$i} {
+        flex-basis: math.div(100%, 24) * $i;
+        max-width: math.div(100%, 24) * $i;
+    }
+}

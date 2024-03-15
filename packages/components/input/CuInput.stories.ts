@@ -28,7 +28,12 @@ const meta: Meta<typeof CuInput> = {
         autosize: {
             control: 'object',
             description: '自动调整高度的选项'
-        }
+        },
+        wordLimitPosition: {
+            control: 'select',
+            options: ['outer-top-left', 'outer-top-right', 'outer-bottom-left', 'outer-bottom-right', 'inner-top-left', 'inner-top-right', 'inner-bottom-left', 'inner-bottom-right'],
+            description: 'Word limit 显示位置'
+        },
     },
     parameters: {
         actions: {
@@ -85,3 +90,11 @@ export const Readonly: Story = {
         readonly: true
     }
 }
+
+export const WordLimitPosition: Story = {
+    args: {
+        placeholder: '请输入文本...',
+        maxLength: 100,
+        wordLimitPosition: 'outer-top-left'
+    }
+};

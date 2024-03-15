@@ -3,7 +3,9 @@
         <textarea ref="textarea" :class="textareaClasses" v-bind="$attrs" :disabled="disabled" :readonly="readonly"
             :placeholder="placeholder" :style="computedStyle" @input="onInput" @focus="onFocus" @blur="onBlur"
             @change="onChange" :maxlength="maxLength"></textarea>
-        <span v-if="showWordLimit" class="word-limit">{{ currentLength }} / {{ maxLength }}</span>
+        <span v-if="showWordLimit" :class="['word-limit', `word-limit-${props.wordLimitPosition}`]">{{ currentLength }}
+            / {{ maxLength }}</span>
+
     </div>
 </template>
 
@@ -23,14 +25,16 @@ const props = withDefaults(defineProps<{
     readonly?: boolean,
     maxLength?: number,
     customStyle?: Record<string, any>,
-    autosize?: { minRows?: number, maxRows?: number }
+    autosize?: { minRows?: number, maxRows?: number },
+    wordLimitPosition?: string
 }>(), {
     placeholder: 'Please input',
     disabled: false,
     readonly: false,
     maxLength: 0,
     customStyle: () => ({}),
-    autosize: undefined
+    autosize: undefined,
+    wordLimitPosition: 'inner-bottom-right'
 });
 
 const computedStyle = computed(() => {

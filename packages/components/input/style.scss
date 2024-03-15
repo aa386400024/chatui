@@ -1,7 +1,53 @@
 @use "../../../styles/main.scss" as *;
 
 .cu-input-container {
+    position: relative;
 
+    // 生成word-limit位置的样式
+    @each $position
+        in (
+            "outer-top-left",
+            "outer-top-right",
+            "inner-bottom-right",
+            "outer-bottom-left",
+            "outer-bottom-right",
+            "inner-top-left",
+            "inner-top-right",
+            "inner-bottom-left"
+        )
+    {
+        .word-limit-#{$position} {
+            @if str-index($position, "outer") {
+                position: absolute;
+                @if str-index($position, "top") {
+                    top: -20px;
+                }
+                @if str-index($position, "bottom") {
+                    bottom: -20px;
+                }
+                @if str-index($position, "left") {
+                    left: 0;
+                }
+                @if str-index($position, "right") {
+                    right: 0;
+                }
+            } @else if str-index($position, "inner") {
+                position: absolute;
+                @if str-index($position, "top") {
+                    top: 10px;
+                }
+                @if str-index($position, "bottom") {
+                    bottom: 10px;
+                }
+                @if str-index($position, "left") {
+                    left: 10px;
+                }
+                @if str-index($position, "right") {
+                    right: 10px;
+                }
+            }
+        }
+    }
 }
 
 .cu-textarea {
@@ -9,9 +55,9 @@
     resize: none;
     padding: var(--cu-input-padding-vertical) var(--cu-input-padding-horizontal);
     box-sizing: border-box;
-    font-size: var(--cu-font-size-base);
+    font-size: $font-size-base;
     border: 1px solid var(--cu-border-color);
-    border-radius: var(--cu-border-radius-base);
+    border-radius: $border-radius-base;
     background-color: var(--cu-background-color);
     color: var(--cu-text-color);
     caret-color: var(--cu-color-primary);
@@ -26,7 +72,7 @@
     &:hover {
         border-color: var(--cu-input-hover-border-color);
     }
-    
+
     &:focus {
         border-color: var(--cu-color-primary);
         outline: none;
@@ -39,7 +85,6 @@
 
 .word-limit {
     color: var(--cu-text-color-regular);
-    font-size: var(--cu-font-size-small);
+    font-size: $font-size-small;
     text-align: right;
 }
-

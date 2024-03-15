@@ -1,0 +1,42 @@
+@use "../../../styles/main.scss" as *;
+
+.cu-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--justify-start {
+        justify-content: flex-start;
+    }
+
+    &--justify-center {
+        justify-content: center;
+    }
+
+    &--justify-end {
+        justify-content: flex-end;
+    }
+
+    &--justify-space-around {
+        justify-content: space-around;
+    }
+
+    &--justify-space-between {
+        justify-content: space-between;
+    }
+
+    &--justify-space-evenly {
+        justify-content: space-evenly;
+    }
+
+    &--align-top {
+        align-items: flex-start;
+    }
+
+    &--align-middle {
+        align-items: center;
+    }
+
+    &--align-bottom {
+        align-items: flex-end;
+    }
+}
