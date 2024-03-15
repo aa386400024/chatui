@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import svgLoader from 'vite-svg-loader';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend' // 设置neme属性
 import dts from 'vite-plugin-dts'
 import path from 'path'
@@ -17,7 +18,8 @@ export default defineConfig({
             insertTypesEntry: true,
             cleanVueFileName: true,
             include: ['packages/**/*']
-        })
+        }),
+        svgLoader(/* options */)
     ],
     resolve: {
         alias: {
