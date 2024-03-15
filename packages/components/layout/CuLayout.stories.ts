@@ -37,9 +37,9 @@ export const BasicLayout: Story = {
         columns: [
             { span: 8, content: 'Col 1' },
             { span: 8, content: 'Col 2' },
-            { span: 8, content: 'Col 2' },
-            { span: 12, content: 'Col 3' },
-            { span: 12, content: 'Col 4' }
+            { span: 8, content: 'Col 3' },
+            { span: 12, content: 'Col 4' },
+            { span: 12, content: 'Col 5' }
         ]
     }
 }
