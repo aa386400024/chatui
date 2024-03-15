@@ -7,6 +7,7 @@ import CuMessage from './message';
 import CuInput from './input';
 import CuRow from './row';
 import CuCol from './col';
+import CuIcon from './icon';
 
 export default [
     CuButton,
@@ -14,7 +15,8 @@ export default [
     CuMessage,
     CuInput,
     CuRow,
-    CuCol
+    CuCol,
+    CuIcon
 ];
 
 export { 
@@ -23,5 +25,6 @@ export {
     CuMessage,
     CuInput,
     CuRow,
-    CuCol
+    CuCol,
+    CuIcon
 };
