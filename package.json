@@ -55,6 +55,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "markdown-it": "^14.0.0",
+    "prismjs": "^1.29.0",
     "storybook-i18n": "^2.1.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue": "^3.4.21",

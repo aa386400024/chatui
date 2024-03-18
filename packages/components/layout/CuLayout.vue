@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue'
+import { } from 'vue'
 import CuRow from '../row/CuRow.vue'
 import CuCol from '../col/CuCol.vue'
 
@@ -17,7 +17,6 @@ const props = defineProps({
     align: String,
     columns: Array
 })
-console.log(props.gutter, 'guttergutter')
 </script>
 
 <style scoped>

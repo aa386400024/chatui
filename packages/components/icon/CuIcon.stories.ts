@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import Icon from './CuIcon.vue'
 
 const meta: Meta<typeof Icon> = {
-    title: 'Components/Icon',
+    title: 'Basic/Icon',
     component: Icon,
     tags: ['autodocs'],
     argTypes: {
@@ -48,6 +48,7 @@ export const NonSvgIcon: Story = {
 
 export const SvgIconFromUrl: Story = {
     args: {
+        size: '24px',
         src: 'https://gw.alicdn.com/tfs/TB17TaySSzqK1RjSZFHXXb3CpXa-80-80.svg' // 这里可以是在线的 SVG 图标 URL
     }
 }

@@ -8,6 +8,7 @@ import CuInput from './input';
 import CuRow from './row';
 import CuCol from './col';
 import CuIcon from './icon';
+import CuMarkdown from './markdown';
 
 export default [
     CuButton,
@@ -16,7 +17,8 @@ export default [
     CuInput,
     CuRow,
     CuCol,
-    CuIcon
+    CuIcon,
+    CuMarkdown
 ];
 
 export { 
@@ -26,5 +28,6 @@ export {
     CuInput,
     CuRow,
     CuCol,
-    CuIcon
+    CuIcon,
+    CuMarkdown
 };

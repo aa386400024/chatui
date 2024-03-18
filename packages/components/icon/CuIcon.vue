@@ -44,10 +44,13 @@ const loadSvg = async () => {
         const data = await response.text();
         svgContent.value = data;
 
-        // 确保 DOM 更新后应用属性
         await nextTick();
         const svgElement = imgContainer.value?.querySelector('svg');
         if (svgElement) {
+            if (!svgElement.hasAttribute('viewBox') || svgElement.getAttribute('viewBox') === '0 0 0 0') {
+                const bbox = svgElement.getBBox();
+                svgElement.setAttribute('viewBox', `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+            }
             svgElement.setAttribute('width', props.size);
             svgElement.setAttribute('height', props.size);
             svgElement.setAttribute('fill', props.color);
@@ -58,12 +61,12 @@ const loadSvg = async () => {
 };
 
 const updateSvgAttributes = () => {
-  const svgElement = imgContainer.value?.querySelector('svg');
-  if (svgElement) {
-    svgElement.setAttribute('width', props.size);
-    svgElement.setAttribute('height', props.size);
-    svgElement.setAttribute('fill', props.color);
-  }
+    const svgElement = imgContainer.value?.querySelector('svg');
+    if (svgElement) {
+        svgElement.setAttribute('width', props.size);
+        svgElement.setAttribute('height', props.size);
+        svgElement.setAttribute('fill', props.color);
+    }
 };
 
 watchEffect(() => {
@@ -72,7 +75,7 @@ watchEffect(() => {
 
 // 当 size 或 color 更改时，更新 SVG 属性
 watch([() => props.size, () => props.color], () => {
-  updateSvgAttributes();
+    updateSvgAttributes();
 }, { immediate: true });
 </script>
 
