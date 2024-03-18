@@ -42,12 +42,12 @@ export const CustomColor: Story = {
 export const NonSvgIcon: Story = {
     args: {
         type: 'png',
-        src: '/assets/icon/chat.svg' // 请替换为实际的 PNG 图标路径
+        src: 'https://img.alicdn.com/imgextra/i4/O1CN01aG16y424E11XsURUd_!!6000000007358-2-tps-206-240.png' // 请替换为实际的 PNG 图标路径
     }
 }
 
 export const SvgIconFromUrl: Story = {
     args: {
-        src: 'https://img.alicdn.com/imgextra/i4/O1CN01aG16y424E11XsURUd_!!6000000007358-2-tps-206-240.png' // 这里可以是在线的 SVG 图标 URL
+        src: 'https://gw.alicdn.com/tfs/TB17TaySSzqK1RjSZFHXXb3CpXa-80-80.svg' // 这里可以是在线的 SVG 图标 URL
     }
 }

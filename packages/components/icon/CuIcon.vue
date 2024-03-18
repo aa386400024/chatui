@@ -1,12 +1,12 @@
 <template>
-    <div :class="containerClass" ref="imgContainer">
+    <div ref="imgContainer">
         <div v-if="isSvg" :class="svgClass" v-html="svgContent"></div>
         <img v-else :src="props.src" :style="imgStyle" alt="">
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, watchEffect, withDefaults } from 'vue';
+import { computed, ref, watch, watchEffect, nextTick } from 'vue';
 
 const props = withDefaults(
     defineProps<{
@@ -45,14 +45,13 @@ const loadSvg = async () => {
         svgContent.value = data;
 
         // 确保 DOM 更新后应用属性
-        imgContainer.value && imgContainer.value.$nextTick(() => {
-            const svgElement = imgContainer.value.querySelector('svg');
-            if (svgElement) {
-                svgElement.setAttribute('width', props.size);
-                svgElement.setAttribute('height', props.size);
-                svgElement.setAttribute('fill', props.color);
-            }
-        });
+        await nextTick();
+        const svgElement = imgContainer.value?.querySelector('svg');
+        if (svgElement) {
+            svgElement.setAttribute('width', props.size);
+            svgElement.setAttribute('height', props.size);
+            svgElement.setAttribute('fill', props.color);
+        }
     } catch (error) {
         console.error(`SvgIcon: Error loading SVG content from '${props.src}':`, error);
     }
