@@ -40,7 +40,7 @@ const meta: Meta<typeof CuInput> = {
             handles: ['input', 'focus', 'blur', 'change']
         }
     },
-    tags: ['autodocs']
+    tags: ['autodocs'],
 }
 
 export default meta

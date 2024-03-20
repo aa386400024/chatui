@@ -9,6 +9,7 @@ import CuRow from './row';
 import CuCol from './col';
 import CuIcon from './icon';
 import CuMarkdown from './markdown';
+import CuDrawer from './drawer';
 
 export default [
     CuButton,
@@ -18,7 +19,8 @@ export default [
     CuRow,
     CuCol,
     CuIcon,
-    CuMarkdown
+    CuMarkdown,
+    CuDrawer
 ];
 
 export { 
@@ -29,5 +31,6 @@ export {
     CuRow,
     CuCol,
     CuIcon,
-    CuMarkdown
+    CuMarkdown,
+    CuDrawer
 };
